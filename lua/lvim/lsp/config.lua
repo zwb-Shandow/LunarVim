@@ -11,7 +11,7 @@ local skipped_servers = {
   "eslintls",
   "golangci_lint_ls",
   "graphql",
-  "jedi_language_server",
+  "pyright",
   "ltex",
   "ocamlls",
   "phpactor",
