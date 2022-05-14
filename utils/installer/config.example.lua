@@ -12,8 +12,10 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
+vim.o.virtualedit = "onemore"
+
+-- for vista
+vim.g.vista_default_executive = 'nvim_lsp'
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -23,8 +25,12 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
 lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
+-- 复制/粘贴至系统剪切板
 lvim.keys.normal_mode["<leader><leader>y"] = '"+y'
 lvim.keys.normal_mode["<leader><leader>p"] = '"+p'
+-- 符号侧边栏打开/关闭
+lvim.keys.normal_mode["<Tab>"] = ":Vista<CR>"
+lvim.keys.normal_mode["<leader><Tab>"] = ":Vista!<CR>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
@@ -86,15 +92,15 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skiipped for the current filetype
-vim.tbl_map(function(server)
-  return server ~= "jedi_language_server"
-end, lvim.lsp.automatic_configuration.skipped_servers)
+-- vim.tbl_map(function(server)
+--   return server ~= "jedi_language_server"
+-- end, lvim.lsp.automatic_configuration.skipped_servers)
 
 -- -- you can set a custom on_attach function that will be used for all the language servers
 -- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
@@ -163,6 +169,19 @@ lvim.plugins = {
       require("todo-comments").setup()
     end,
   },
+  {
+    "zwb-Shandow/neogen",
+    config = function()
+      require('neogen').setup()
+    end,
+    requires = 'nvim-treesitter/nvim-treesitter',
+  },
+  {
+    "liuchengxu/vista.vim",
+    -- config = function()
+    --   require('vista.vim').setup()
+    -- end,
+  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
