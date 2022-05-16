@@ -70,13 +70,14 @@ styles.lvim = {
   options = {
     theme = "auto",
     icons_enabled = lvim.use_icons,
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
+    component_separators = { left = "|", right = "|" },
+    section_separators = { left = " ", right = "" },
     disabled_filetypes = { "alpha", "NvimTree", "Outline" },
   },
   sections = {
     lualine_a = {
-      components.mode,
+      -- components.mode,
+      "mode"
     },
     lualine_b = {
       components.branch,
@@ -94,7 +95,8 @@ styles.lvim = {
     },
     lualine_y = {},
     lualine_z = {
-      components.scrollbar,
+      -- components.scrollbar,
+      "location"
     },
   },
   inactive_sections = {
