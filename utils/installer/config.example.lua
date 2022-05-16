@@ -29,8 +29,9 @@ lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 lvim.keys.normal_mode["<leader><leader>y"] = '"+y'
 lvim.keys.normal_mode["<leader><leader>p"] = '"+p'
 -- 符号侧边栏打开/关闭
-lvim.keys.normal_mode["<Tab>"] = ":Vista<CR>"
-lvim.keys.normal_mode["<leader><Tab>"] = ":Vista!<CR>"
+lvim.keys.normal_mode["<leader>t"] = ":Vista<CR>"
+lvim.keys.normal_mode["<leader>tt"] = ":Vista!<CR>"
+lvim.keys.visual_block_mode["<leader>yd"] = ":Translate zh-CN -source=en -output=floating<CR>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
@@ -178,9 +179,19 @@ lvim.plugins = {
   },
   {
     "liuchengxu/vista.vim",
-    -- config = function()
-    --   require('vista.vim').setup()
-    -- end,
+  },
+  {
+    "uga-rosa/translate.nvim",
+    config = function()
+      require('translate').setup({
+        default = {
+          command = "translate_shell",
+          output = "floating",
+          parser_before = "trim",
+          parse_after = "no_handle",
+        },
+      })
+    end,
   }
 }
 
