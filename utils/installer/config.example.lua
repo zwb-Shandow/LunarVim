@@ -196,6 +196,9 @@ lvim.plugins = {
   {
     "p00f/nvim-ts-rainbow",
   },
+  {
+    "lfv89/vim-interestingwords",
+  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
