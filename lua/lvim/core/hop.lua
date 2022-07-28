@@ -5,7 +5,7 @@ function M.config()
     active = true,
     on_config_done = nil,
 
-    keys = "QWERTY",
+    keys = "qwerty",
     quit_key = "<ESC>",
     jump_on_sole_occurrence = false,
     case_insensitive = false,

@@ -112,5 +112,8 @@
   },
   "hop.nvim": {
     "commit": "ced6c94"
+  },
+  "translate.nvim": {
+    "commit": "68ead8e"
   }
 }

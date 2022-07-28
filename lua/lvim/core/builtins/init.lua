@@ -17,6 +17,7 @@ local builtins = {
   "lvim.core.lualine",
   "lvim.core.alpha",
   "lvim.core.hop",
+  "lvim.core.translate",
 }
 
 function M.config(config)

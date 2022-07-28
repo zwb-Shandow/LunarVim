@@ -183,6 +183,15 @@ local core_plugins = {
     disable = not lvim.builtin.hop.active,
   },
 
+  -- translate
+  {
+    "uga-rosa/translate.nvim",
+    config = function()
+      require("lvim.core.translate").setup()
+    end,
+    disable = not lvim.builtin.translate.active,
+  },
+
   -- Icons
   {
     "kyazdani42/nvim-web-devicons",
