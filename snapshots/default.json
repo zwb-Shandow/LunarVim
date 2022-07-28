@@ -109,5 +109,8 @@
   },
   "which-key.nvim": {
     "commit": "f03a259"
+  },
+  "hop.nvim": {
+    "commit": "ced6c94"
   }
 }

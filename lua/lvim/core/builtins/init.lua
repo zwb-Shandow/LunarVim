@@ -16,6 +16,7 @@ local builtins = {
   "lvim.core.notify",
   "lvim.core.lualine",
   "lvim.core.alpha",
+  "lvim.core.hop",
 }
 
 function M.config(config)

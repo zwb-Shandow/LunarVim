@@ -174,6 +174,15 @@ local core_plugins = {
     disable = not lvim.builtin.project.active,
   },
 
+  -- move speed
+  {
+    "phaazon/hop.nvim",
+    config = function()
+      require("lvim.core.hop").setup()
+    end,
+    disable = not lvim.builtin.hop.active,
+  },
+
   -- Icons
   {
     "kyazdani42/nvim-web-devicons",
