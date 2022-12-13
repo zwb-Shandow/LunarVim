@@ -155,24 +155,27 @@ formatters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "uga-rosa/translate.nvim",
-    config = function()
-      require('translate').setup({
-        default = {
-          command = 'translate_shell',
-          output = 'floating',
-          parser_before = 'trim',
-          parser_after = 'no_handle',
-        }
-      })
-    end
-  },
+  -- {
+  --   "uga-rosa/translate.nvim",
+  --   config = function()
+  --     require('translate').setup({
+  --       default = {
+  --         command = 'translate_shell',
+  --         output = 'floating',
+  --         parser_before = 'trim',
+  --         parser_after = 'no_handle',
+  --       }
+  --     })
+  --   end
+  -- },
   {
     "p00f/nvim-ts-rainbow",
   },
   {
     "lfv89/vim-interestingwords",
+  },
+  {
+    "babaybus/DoxygenToolkit.vim",
   },
 }
 
